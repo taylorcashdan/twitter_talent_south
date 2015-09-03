@@ -5,12 +5,17 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true, :placeholder => "email@email.email" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
+
+  <div class="field">
+    <%= f.label :username %><br />
+    @<%= f.text_field :username, autofocus: true, :placeholder => "username" %>
+  </div>
 
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
@@ -27,9 +32,19 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :bio %><br />
+    <%= f.text_area :bio, autofocus: true, :placeholder => "Something about yourself." %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location, autofocus: true, :placeholder => "Where you be?" %>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
+
 <% end %>
 
 <h3>Cancel my account</h3>
